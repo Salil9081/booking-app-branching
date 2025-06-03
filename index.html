@@ -3,127 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Uber Booking Page</title>
+  <title>Uber Booking app - Salil Shaikh</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
+      background-image: url('https://images.unsplash.com/photo-1518593922601-97911b0c9b6d?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #333;
     }
 
-    header {
+    h1 {
       text-align: center;
-      padding: 1rem;
-      background-color: #000;
       color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 0;
+      padding: 20px;
+      font-size: 36px;
     }
 
     .container {
       display: flex;
-      justify-content: space-around;
-      padding: 2rem;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 40px auto;
+      max-width: 1100px;
+      animation: fadeIn 2s ease-in-out;
     }
 
     .booking-box {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 2rem;
-      width: 45%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 15px;
+      width: 320px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .booking-box:hover {
+      transform: scale(1.02);
     }
 
     .booking-box img {
       width: 100%;
-      max-height: 180px;
-      object-fit: cover;
       border-radius: 10px;
     }
 
-    .booking-box h2 {
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    input[type="submit"] {
+      margin-top: 16px;
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 10px;
       color: #333;
     }
 
-    .booking-box input,
-    .booking-box select,
-    .booking-box button {
-      margin: 0.5rem 0;
-      padding: 0.6rem;
-      width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-
-    .booking-box button {
-      background-color: #000;
-      color: white;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .booking-box button:hover {
-      background-color: #333;
-    }
-
-    @media screen and (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .booking-box {
-        width: 90%;
-        margin-bottom: 2rem;
-      }
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(40px);}
+      100% {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Uber - Book Your Ride</h1>
-</header>
+  <h1>Uber Booking -Salil Shaikh</h1>
 
-<div class="container">
+  <div class="container">
+    <!-- Car Booking -->
+    <div class="booking-box">
+      <div class="title">Car Booking</div>
+      <img src="https://cdn.pixabay.com/photo/2013/07/12/15/55/car-150890_1280.png" alt="Car Image" />
+      <form>
+        <label for="car-city">Select City:</label>
+        <select id="car-city">
+          <option value="">-- Select City --</option>
+          <option value="Aurangabad">Aurangabad</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Mumbai">Mumbai</option>
+        </select>
 
-  <!-- Car Booking -->
-  <div class="booking-box">
-    <img src="https://images.unsplash.com/photo-1549921296-3a7b45b8e30c" alt="Car Ride">
-    <h2>Book a Car</h2>
-    <input type="text" placeholder="Enter Pickup Location" />
-    <input type="text" placeholder="Enter Drop Location" />
-    <select>
-      <option>Select Car Type</option>
-      <option>Mini</option>
-      <option>Sedan</option>
-      <option>SUV</option>
-    </select>
-    <button>Book Car</button>
+        <label for="car-name">Your Name:</label>
+        <input type="text" id="car-name" placeholder="Enter your name" />
+
+        <label for="car-pickup">Pickup Location:</label>
+        <input type="text" id="car-pickup" placeholder="Enter pickup location" />
+
+        <label for="car-drop">Drop Location:</label>
+        <input type="text" id="car-drop" placeholder="Enter drop location" />
+
+        <input type="submit" value="Book Car" />
+      </form>
+    </div>
+
+    <!-- Bike Booking -->
+    <div class="booking-box">
+      <div class="title">Bike Booking</div>
+      <img src="https://cdn.pixabay.com/photo/2016/03/27/17/40/motorcycle-1283233_1280.jpg" alt="Bike Image" />
+      <form>
+        <label for="bike-city">Select City:</label>
+        <select id="bike-city">
+          <option value="">-- Select City --</option>
+          <option value="Aurangabad">Aurangabad</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Mumbai">Mumbai</option>
+        </select>
+
+        <label for="bike-name">Your Name:</label>
+        <input type="text" id="bike-name" placeholder="Enter your name" />
+
+        <label for="bike-pickup">Pickup Location:</label>
+        <input type="text" id="bike-pickup" placeholder="Enter pickup location" />
+
+        <label for="bike-drop">Drop Location:</label>
+        <input type="text" id="bike-drop" placeholder="Enter drop location" />
+
+        <input type="submit" value="Book Bike" />
+      </form>
+    </div>
   </div>
 
-  <!-- Bike Booking -->
-  <div class="booking-box">
-    <img src="https://images.unsplash.com/photo-1599058918142-1e9b93e4a7aa" alt="Bike Ride">
-    <h2>Book a Bike</h2>
-    <input type="text" placeholder="Enter Pickup Location" />
-    <input type="text" placeholder="Enter Drop Location" />
-    <select>
-      <option>Select Bike Type</option>
-      <option>Standard</option>
-      <option>Scooter</option>
-      <option>Electric</option>
-    </select>
-    <button>Book Bike</button>
-  </div>
-
-</div>
-
+  <script>
+    // Fade in effect on load
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".container").style.opacity = 0;
+      setTimeout(() => {
+        document.querySelector(".container").style.opacity = 1;
+      }, 200);
+    });
+  </script>
 </body>
 </html>
