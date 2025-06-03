@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Uber Booking Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+
+    header {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      padding: 2rem;
+    }
+
+    .booking-box {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      width: 45%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .booking-box img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .booking-box h2 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .booking-box input,
+    .booking-box select,
+    .booking-box button {
+      margin: 0.5rem 0;
+      padding: 0.6rem;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .booking-box button {
+      background-color: #000;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .booking-box button:hover {
+      background-color: #333;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .booking-box {
+        width: 90%;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Uber - Book Your Ride</h1>
+</header>
+
+<div class="container">
+
+  <!-- Car Booking -->
+  <div class="booking-box">
+    <img src="https://images.unsplash.com/photo-1549921296-3a7b45b8e30c" alt="Car Ride">
+    <h2>Book a Car</h2>
+    <input type="text" placeholder="Enter Pickup Location" />
+    <input type="text" placeholder="Enter Drop Location" />
+    <select>
+      <option>Select Car Type</option>
+      <option>Mini</option>
+      <option>Sedan</option>
+      <option>SUV</option>
+    </select>
+    <button>Book Car</button>
+  </div>
+
+  <!-- Bike Booking -->
+  <div class="booking-box">
+    <img src="https://images.unsplash.com/photo-1599058918142-1e9b93e4a7aa" alt="Bike Ride">
+    <h2>Book a Bike</h2>
+    <input type="text" placeholder="Enter Pickup Location" />
+    <input type="text" placeholder="Enter Drop Location" />
+    <select>
+      <option>Select Bike Type</option>
+      <option>Standard</option>
+      <option>Scooter</option>
+      <option>Electric</option>
+    </select>
+    <button>Book Bike</button>
+  </div>
+
+</div>
+
+</body>
+</html>
